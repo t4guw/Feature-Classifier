@@ -2,9 +2,10 @@
 
 ## Dependencies
 
+* Python 3
 * [SciKit Learn](https://scikit-learn.org/stable/install.html)
 * [PyTorch](https://pytorch.org/get-started/locally/)
-
+* `pip3 install pytorch-pretrained-bert`
 ## Git Workflow
 
 ### Starting Work on a New Issue
