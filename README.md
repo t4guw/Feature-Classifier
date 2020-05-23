@@ -1,5 +1,9 @@
 # Hint-Classifier
 
+## Dependencies
+
+* [SciKit Learn](https://scikit-learn.org/stable/install.html)
+* [PyTorch](https://pytorch.org/get-started/locally/)
 
 ## Git Workflow
 
