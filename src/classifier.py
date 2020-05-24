@@ -18,7 +18,7 @@ all_problems = []
 map_labels = []
 list_labels = []
 loop_labels = []
-nested_loop_labes = []
+nested_loop_labels = []
 # ... and so on
 # =================================
 
@@ -30,7 +30,7 @@ svm = svm.SVC(kernel='rbf')
 svm.fit(data.training_embeddings, data.training_labels)
 
 correct = 0
-total = len[data.validation_labels]
+total = len(data.validation_labels)
 for i in range(total):
     if svm.predict(data.validation_embeddings[i])[0] == data.validation_labels[i]:
         correct += 1
