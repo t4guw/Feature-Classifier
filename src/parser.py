@@ -63,9 +63,9 @@ def create_output_file():
             
 def main():
     print("Processing problem statements...")
-    process_statements("data/statements.txt")
+    process_statements("src/data/statements.txt")
     print("Processing solutions...")
-    process_solutions("data/solutions.txt")
+    process_solutions("src/data/solutions.txt")
     create_output_file()
 
 if __name__ == "__main__":

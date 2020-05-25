@@ -45,7 +45,7 @@ def get_embeddings(all_problems):
     index = 1
     
     for problem in all_problems:
-        tok_statement = get_tokenized_statement(problem.statement, tokenizer)
+        tok_statement = get_tokenized_statement(problem['statement'], tokenizer)
         indexed_tokens = get_indexed_tokens(tok_statement, tokenizer)
         segment_ids = [1] * len(tok_statement)
         
@@ -56,7 +56,7 @@ def get_embeddings(all_problems):
             encoded_layers, x = bert_model(tok_tensor, segments_tensor)
 
         statement_embedding = extract_embeddings(encoded_layers)
-        all_embeddings.append(statement_embedding)
+        all_embeddings.append(statement_embedding.tolist())
         print(index, '/ 762')
         index += 1
     
