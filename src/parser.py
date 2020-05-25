@@ -59,14 +59,13 @@ def read_section(file, marker=''):
 def create_output_file():
     with open(OUTPUT_FILE, 'w') as outfile:
         for k, v in PROBLEMS.items():
-            json.dump(v.serialize(), outfile)
-
+            print(v.serialize(), file = outfile)
+            
 def main():
+    print("Processing problem statements...")
     process_statements("data/statements.txt")
+    print("Processing solutions...")
     process_solutions("data/solutions.txt")
-    for k,v in PROBLEMS.items():
-        print(k, v.serialize())
-        break
     create_output_file()
 
 if __name__ == "__main__":
