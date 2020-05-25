@@ -68,3 +68,17 @@ def queues(all_problems):
                     label += 1
         all_labels.append(label)
     return all_labels
+
+# Returns a list of priority queue labels
+# Labels: 0 = no priority queue in solution, >0 = priority queue exists in solution
+# Each index in all_labels labels the corresponding index in all_problems
+def priority_queues(all_problems):
+    all_labels = []
+    label = 0
+    for problem in all_problems:
+        for solution in problem.solutions:
+            for line in solution:
+                if 'priority_queue<' in line:
+                    label += 1
+        all_labels.append(label)
+    return all_labels
