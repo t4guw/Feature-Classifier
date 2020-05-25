@@ -18,6 +18,7 @@
 ### Creating a Pull Request
 This should be done when you have completed and tested your work on an issue branch, and you're ready to merge your changes with the `master` branch.
 
+0. Before creating a pull request, make sure to merge any new changes from `master` into your branch using `git merge master`. Resolve any merge conflicts if any.
 1. Go to the [GitHub repository](https://github.com/hollowsunsets/MovieStoreDatabase) and click on the **Pull Requests** tab.
 2. Click the **New Pull Request** button.
 3. Find the name of your branch in the "Example Comparisons" table and click on it.
