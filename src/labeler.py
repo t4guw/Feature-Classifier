@@ -3,12 +3,12 @@
 import json
 
 
+    
 # Returns a list of map labels
 # Labels: 0 = no map in solution, >0 = map exists in solution
 # Each index in all_labels labels the corresponding index in all_problems
 def maps(all_problems):
     all_labels = []
-
     for problem in all_problems:
         label = 0
         for solution in problem['solutions']:
@@ -21,7 +21,6 @@ def maps(all_problems):
 
 def lists(all_problems):
     all_labels = []
-
     for problem in all_problems:
         label = 0
         for solution in problem['solutions']:
@@ -34,7 +33,6 @@ def lists(all_problems):
 
 def sets(all_problems):
     all_labels = []
-
     for problem in all_problems:
         label = 0
         for solution in problem['solutions']:
@@ -47,7 +45,6 @@ def sets(all_problems):
 
 def stacks(all_problems):
     all_labels = []
-
     for problem in all_problems:
         label = 0
         for solution in problem['solutions']:
@@ -60,7 +57,6 @@ def stacks(all_problems):
 
 def queues(all_problems):
     all_labels = []
-
     for problem in all_problems:
         label = 0
         for solution in problem['solutions']:
@@ -73,7 +69,6 @@ def queues(all_problems):
 
 def priority_queues(all_problems):
     all_labels = []
-
     for problem in all_problems:
         label = 0
         for solution in problem['solutions']:
@@ -86,7 +81,6 @@ def priority_queues(all_problems):
 
 def linked_lists(all_problems):
     all_labels = []
-
     for problem in all_problems:
         label = 0
         for solution in problem['solutions']:
