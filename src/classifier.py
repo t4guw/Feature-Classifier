@@ -43,8 +43,8 @@ def gridsearch(labels, random_trials, c_vals, g_vals):
     max_c = 0
     max_g = 0
     
-    for i in range(random_trials):
-        print('Trial:', i + 1)
+    for trial in range(random_trials):
+        print('Trial:', trial + 1)
         data = ModelData(all_embeddings, labels)
         total = len(data.validation_labels)
         for c in c_vals:
