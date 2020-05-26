@@ -78,20 +78,7 @@ def priority_queues(all_problems):
         label = 0
         for solution in problem['solutions']:
             for line in solution.split('\n'):
-                if 'priority_queue<' in line.lower():
-                    label = 1
-        all_labels.append(label)
-    return all_labels
-
-
-def linked_lists(all_problems):
-    all_labels = []
-
-    for problem in all_problems:
-        label = 0
-        for solution in problem['solutions']:
-            for line in solution.split('\n'):
-                if 'Node' in line.lower() or 'LinkedList<' in line.lower():
+                if 'priority_queue<' in line.lower() or 'priorityqueue<':
                     label = 1
         all_labels.append(label)
     return all_labels
