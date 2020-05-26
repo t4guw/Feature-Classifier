@@ -17,6 +17,19 @@ def maps(all_problems):
                     label = 1
         all_labels.append(label)
     return all_labels
+
+
+def lists(all_problems):
+    all_labels = []
+    
+    for problem in all_problems:
+        label = 0
+        for solution in problem['solutions']:
+            for line in solution.split('\n'):
+                if 'list<' in line.lower() or 'vector<' in line.lower():
+                    label = 1
+        all_labels.append(label)
+    return all_labels
     
 
 
