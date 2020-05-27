@@ -38,6 +38,9 @@ def extract_embeddings(encoded_layers):
 # Reterns a list of all embeddings
 def get_embeddings(all_problems):
     print('Go BERT, go!!')
+
+    output = open('embeddings.txt', 'w')
+
     all_embeddings = []
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     bert_model = BertModel.from_pretrained('bert-base-uncased')
@@ -57,11 +60,25 @@ def get_embeddings(all_problems):
 
         statement_embedding = extract_embeddings(encoded_layers)
         all_embeddings.append(statement_embedding.tolist())
+        for num in all_embeddings[-1]:
+            output.write(str(num))
+            output.write(' ')
+        output.write('\n')
+        output.flush()
         print(index, '/ 762')
         index += 1
+    
+    print(all_embeddings[0], all_embeddings[5], all_embeddings[762])
     
     print('DONE: Generated all BERT embeddings')
     return all_embeddings
 
 
+def get_embeddings_from_file():
+    emb_file = open('embeddings.txt', 'r')
+    all_embeddings = []
+    for line in emb_file.readlines():
+        vector = [float(num) for num in line.replace(' \n', '').split(' ')]
+        all_embeddings.append(vector)
 
+    return all_embeddings
