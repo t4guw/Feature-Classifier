@@ -78,6 +78,7 @@ def priority_queues(all_problems):
         all_labels.append(label)
     return all_labels
 
+
 def loops(all_problems):
     all_labels = []
     for problem in all_problems:
@@ -89,6 +90,7 @@ def loops(all_problems):
         all_labels.append(label)
     return all_labels
 
+
 def switches(all_problems):
     all_labels = []
     for problem in all_problems:
@@ -99,6 +101,7 @@ def switches(all_problems):
                     label = 1
         all_labels.append(label)
     return all_labels
+
 
 def if_statements(all_problems):
     all_labels = []
