@@ -85,7 +85,7 @@ def loops(all_problems):
         label = 0
         for solution in problem['solutions']:
             for line in solution.split('\n'):
-                if 'for ' in line.lower() or 'do ' in line.lower() or 'while ' in line.lower():
+                if ' for ' in line.lower() or ' do ' in line.lower() or ' while ' in line.lower():
                     label = 1
         all_labels.append(label)
     return all_labels
@@ -97,7 +97,7 @@ def switches(all_problems):
         label = 0
         for solution in problem['solutions']:
             for line in solution.split('\n'):
-                if 'switch ' in line.lower():
+                if ' switch ' in line.lower():
                     label = 1
         all_labels.append(label)
     return all_labels
@@ -109,7 +109,7 @@ def if_statements(all_problems):
         label = 0
         for solution in problem['solutions']:
             for line in solution.split('\n'):
-                if 'if ' in line.lower():
+                if ' if ' in line.lower():
                     label = 1
         all_labels.append(label)
     return all_labels
