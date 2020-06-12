@@ -19,7 +19,7 @@ Problem statements are representing using [word embedding model](https://towards
 Relevant files: `problem.py`, `parser.py`, `problems.json`
 
 Problem statements and solutions for each problem statement are scraped from LeetCode and stored in `statements.txt` and `solutions.txt`.
-As of 6/11/2020 we currently have 762 LeetCode problem statements with corresponding solutions.
+As of 6/11/2020 we currently have 763 LeetCode problem statements with corresponding solutions.
 
 Each problem statement is then processed into a JSON object of the form: 
 
@@ -86,7 +86,7 @@ To run the classifier for all features, in the project's root directory, run `py
 
 ### Running Model for One Feature
 
-To run the model for a specific feature, comment out the corresponding `gridsearch(...)` call in `classifier.py`.
+To run the model for a specific feature, identify the corresponding `gridsearch(...)` call and comment out the others in `classifier.py`.
 Then in a terminal, run `python3 src/classifier.py`.
 
 ```python3
