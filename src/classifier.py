@@ -21,7 +21,9 @@ def read_problems():
             all_problems.append(problem)
     return all_problems
 
+print("Starting classifier....")
 
+print("Reading input data...")
 all_problems = read_problems()
 # print('\n\n\n', all_problems[0]['solutions'], '\n\n\n')
 
@@ -40,10 +42,12 @@ nested_loop_labels = []
 
 # exit()
 
+print("Creating embeddings...")
 all_embeddings = get_embeddings_from_file()
 print('Single Embedding:', len(all_embeddings[0]))
 print('\nEmbeddings Length:', len(all_embeddings), '\n')
 
+print("Creating training labels...")
 data = ModelData(all_embeddings, list_labels)
 data.set_data_kfold(10, 0)
 print(data.training_labels)
