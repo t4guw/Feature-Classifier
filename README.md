@@ -12,7 +12,7 @@ As of 6/11/2020, we are classifying problem statements that have the following f
 * Priority Queues
 * Maps
 
-Problem statements are representing using [word embedding model](https://towardsdatascience.com/nlp-extract-contextualized-word-embeddings-from-bert-keras-tf-67ef29f60a7b).
+Problem statements are represented using [word embedding model](https://towardsdatascience.com/nlp-extract-contextualized-word-embeddings-from-bert-keras-tf-67ef29f60a7b).
 
 ### Data Gathering and Preprocessing
 
@@ -40,7 +40,7 @@ These objects are stored in `problem.json`.
 
 ### Labeling
 
-Relevant files: `labeler.py`, `problem.json`
+Relevant files: `labeller.py`, `problem.json`
 
 Labeling of problems statements is performed using `labellers.py` on `problems.json`. 
 For each problem, every solution of the problem is checked to see if it has keywords that indicate if it has a feature.
@@ -107,6 +107,17 @@ gridsearch(priority_queue_labels, 10, c_range, g_range, w_range)
 
 print('\n\nOptimizing SVM hyperparameters for maps...')
 gridsearch(map_labels, 10, c_range, g_range, w_range)
+```
+
+**Example: Classification for Maps**
+
+```
+Optimizing SVM hyperparameters for maps...
+0.18 % positive, or 142 / 763
+60 120 180 240 300 360 420 480 540 600 660 720 780 840 900 960 1020 1080 1140 1200 1260 1320 1380 1440 1500 1560 1620 1680 1740 1800 1860 1920 1980 2040 2100 2160 2220 2280 2340 2400 2460 2520 2580 2640 2700 2760 2820 2880 2940 3000 3060 3120 3180 3240 3300 3360 3420 3480 3540 3600 3660 3720 3780 3840 3900 3960 4020 4080 4140 4200 4260 4320 4380 4440 4500 4560 4620 4680 4740 4800 4860 4920 4980 5040 5100 5160 5220 5280 5340 5400 5460 5520 5580 5640 5700 5760 5820 5880 5940 6000
+Accuracy: 0.8171052631578947
+C = 1.0
+gamma = 0.21544346900318834 weight = 0.26440677966101694
 ```
 
 ## Git Workflow
