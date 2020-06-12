@@ -62,7 +62,14 @@ The functions to perform this embedding are defined in `embedder.py` and used in
 
 #### SVM (Support Vector Machine)
 
+This is a type of [supervised learning model](https://en.wikipedia.org/wiki/Supervised_learning) that can be used for classification.
+Support vector machines [create a hyperplane in multidimensional space](https://www.youtube.com/watch?v=3liCbRZPrZA&feature=emb_logo) to separate a dataset into classes.
 
+![Example of SVM](docs/svm-example.png)
+
+An ideal choice of hyperplane will have the largest possible distance (margin) between the two points of data that are closest to the hyperplane (support vectors).
+
+For this project, we use `scikit-learn`'s out-of-the-box [SVM classification model](https://scikit-learn.org/stable/modules/svm.html) to perform the classifications based on the problem statement labels and use [k-fold cross validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)#k-fold_cross-validation) to assess the accuracy of the model.
 
 
 ## Dependencies
