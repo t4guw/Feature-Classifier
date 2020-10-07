@@ -1,3 +1,4 @@
+
 ~~~STATEMENT_START~~~
 1
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -10,10 +11,11 @@ You can return the answer in any order.
 
 ~~~STATEMENT_START~~~
 2
-You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
+ 
 
 ~~~STATEMENT_START~~~
 3
@@ -22,17 +24,10 @@ Given a string s, find the length of the longest substring without repeating cha
  
 
 ~~~STATEMENT_START~~~
-4
-Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
-
-Follow up: The overall run time complexity should be O(log (m+n)).
+5
+Given a string s, return the longest palindromic substring in s.
 
  
-
-~~~STATEMENT_START~~~
-5
-Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
-
 
 ~~~STATEMENT_START~~~
 6
@@ -50,16 +45,22 @@ Write the code that will take a string and make this conversion given a number o
 string convert(string s, int numRows);
 
 
+ 
+
 ~~~STATEMENT_START~~~
 7
 Given a 32-bit signed integer, reverse digits of an integer.
 
+Note:
+Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
+
+ 
 
 ~~~STATEMENT_START~~~
 8
 Implement atoi which converts a string to an integer.
 
-The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.
+The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.
 
 The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.
 
@@ -70,48 +71,40 @@ If no valid conversion could be performed, a zero value is returned.
 Note:
 
 
-	Only the space character ' ' is considered as whitespace character.
-	Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. If the numerical value is out of the range of representable values, INT_MAX (231 − 1) or INT_MIN (−231) is returned.
+	Only the space character ' ' is considered a whitespace character.
+	Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. If the numerical value is out of the range of representable values, INT_MAX (231 − 1) or INT_MIN (−231) is returned.
 
 
+ 
 
 ~~~STATEMENT_START~~~
 9
 Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
 
+Follow up: Could you solve it without converting the integer to a string?
+
+ 
 
 ~~~STATEMENT_START~~~
 10
-Given an input string (s) and a pattern (p), implement regular expression matching with support for '.' and '*'.
+Given an input string (s) and a pattern (p), implement regular expression matching with support for '.' and '*' where: 
 
-'.' Matches any single character.
-'*' Matches zero or more of the preceding element.
+
+	'.' Matches any single character.​​​​
+	'*' Matches zero or more of the preceding element.
 
 
 The matching should cover the entire input string (not partial).
 
-Note:
-
-
-	s could be empty and contains only lowercase letters a-z.
-	p could be empty and contains only lowercase letters a-z, and characters like . or *.
-
-
+ 
 
 ~~~STATEMENT_START~~~
 11
-Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.
+Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of the line i is at (i, ai) and (i, 0). Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.
 
-Note: You may not slant the container and n is at least 2.
-
- 
-
-
-
-The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49. 
+Notice that you may not slant the container.
 
  
-
 
 ~~~STATEMENT_START~~~
 12
@@ -126,7 +119,7 @@ C             100
 D             500
 M             1000
 
-For example, two is written as II in Roman numeral, just two one's added together. Twelve is written as, XII, which is simply X + II. The number twenty seven is written as XXVII, which is XX + V + II.
+For example, 2 is written as II in Roman numeral, just two one's added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
 
 Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
 
@@ -136,8 +129,9 @@ Roman numerals are usually written largest to smallest from left to right. Howev
 	C can be placed before D (500) and M (1000) to make 400 and 900.
 
 
-Given an integer, convert it to a roman numeral. Input is guaranteed to be within the range from 1 to 3999.
+Given an integer, convert it to a roman numeral.
 
+ 
 
 ~~~STATEMENT_START~~~
 13
@@ -152,7 +146,7 @@ C             100
 D             500
 M             1000
 
-For example, two is written as II in Roman numeral, just two one's added together. Twelve is written as, XII, which is simply X + II. The number twenty seven is written as XXVII, which is XX + V + II.
+For example, 2 is written as II in Roman numeral, just two one's added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
 
 Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
 
@@ -162,8 +156,9 @@ Roman numerals are usually written largest to smallest from left to right. Howev
 	C can be placed before D (500) and M (1000) to make 400 and 900.
 
 
-Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.
+Given a roman numeral, convert it to an integer.
 
+ 
 
 ~~~STATEMENT_START~~~
 14
@@ -171,6 +166,7 @@ Write a function to find the longest common prefix string amongst an array of st
 
 If there is no common prefix, return an empty string "".
 
+ 
 
 ~~~STATEMENT_START~~~
 15
@@ -188,26 +184,29 @@ Given an array nums of n integers and an integer target, find three integers in 
 
 ~~~STATEMENT_START~~~
 17
-Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
+Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
 
 A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
 
 
 
+ 
 
 ~~~STATEMENT_START~~~
 18
 Given an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.
 
-Note:
+Notice that the solution set must not contain duplicate quadruplets.
 
-The solution set must not contain duplicate quadruplets.
-
+ 
 
 ~~~STATEMENT_START~~~
 19
-Given a linked list, remove the n-th node from the end of list and return its head.
+Given the head of a linked list, remove the nth node from the end of the list and return its head.
 
+Follow up: Could you do this in one pass?
+
+ 
 
 ~~~STATEMENT_START~~~
 20
@@ -226,23 +225,13 @@ An input string is valid if:
 21
 Merge two sorted linked lists and return it as a new sorted list. The new list should be made by splicing together the nodes of the first two lists.
 
+ 
 
 ~~~STATEMENT_START~~~
 22
-
 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 
-
-
-For example, given n = 3, a solution set is:
-
-[
-  "((()))",
-  "(()())",
-  "(())()",
-  "()(())",
-  "()()()"
-]
+ 
 
 ~~~STATEMENT_START~~~
 23
@@ -256,24 +245,28 @@ Merge all the linked-lists into one sorted linked-list and return it.
 24
 Given a linked list, swap every two adjacent nodes and return its head.
 
-You may not modify the values in the list's nodes, only nodes itself may be changed.
+You may not modify the values in the list's nodes. Only nodes itself may be changed.
 
  
-
 
 ~~~STATEMENT_START~~~
 25
 Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
 
-k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.
+k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is.
+
+Follow up:
 
 
+	Could you solve the problem in O(1) extra memory space?
+	You may not alter the values in the list's nodes, only nodes itself may be changed.
 
 
+ 
 
 ~~~STATEMENT_START~~~
 26
-Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
+Given a sorted array nums, remove the duplicates in-place such that each element appears only once and returns the new length.
 
 Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
 
@@ -293,34 +286,45 @@ Implement strStr().
 
 Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 
+Clarification:
+
+What should we return when needle is an empty string? This is a great question to ask during an interview.
+
+For the purpose of this problem, we will return 0 when needle is an empty string. This is consistent to C's strstr() and Java's indexOf().
+
+ 
 
 ~~~STATEMENT_START~~~
 29
-Given two integers dividend and divisor, divide two integers without using multiplication, division and mod operator.
+Given two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator.
 
 Return the quotient after dividing dividend by divisor.
 
 The integer division should truncate toward zero, which means losing its fractional part. For example, truncate(8.345) = 8 and truncate(-2.7335) = -2.
 
+Note:
+
+
+	Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. For this problem, assume that your function returns 231 − 1 when the division result overflows.
+
+
+ 
 
 ~~~STATEMENT_START~~~
 31
 Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
 
-If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).
+If such an arrangement is not possible, it must rearrange it as the lowest possible order (i.e., sorted in ascending order).
 
-The replacement must be in-place and use only constant extra memory.
+The replacement must be in place and use only constant extra memory.
 
-Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.
-
-1,2,3 → 1,3,2
-3,2,1 → 1,2,3
-1,1,5 → 1,5,1
+ 
 
 ~~~STATEMENT_START~~~
 32
 Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.
 
+ 
 
 ~~~STATEMENT_START~~~
 33
@@ -336,33 +340,36 @@ If target is found in the array return its index, otherwise, return -1.
 34
 Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.
 
-Your algorithm's runtime complexity must be in the order of O(log n).
+If target is not found in the array, return [-1, -1].
 
-If the target is not found in the array, return [-1, -1].
+Follow up: Could you write an algorithm with O(log n) runtime complexity?
 
+ 
 
 ~~~STATEMENT_START~~~
 35
-Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
 
-You may assume no duplicates in the array.
-
+ 
 
 ~~~STATEMENT_START~~~
 36
-Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
+Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
 
 
 	Each row must contain the digits 1-9 without repetition.
 	Each column must contain the digits 1-9 without repetition.
-	Each of the 9 3x3 sub-boxes of the grid must contain the digits 1-9 without repetition.
+	Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition.
 
 
+Note:
 
-A partially filled sudoku which is valid.
 
-The Sudoku board could be partially filled, where empty cells are filled with the character '.'.
+	A Sudoku board (partially filled) could be valid but is not necessarily solvable.
+	Only the filled cells need to be validated according to the mentioned rules.
 
+
+ 
 
 ~~~STATEMENT_START~~~
 37
@@ -373,24 +380,12 @@ A sudoku solution must satisfy all of the following rules:
 
 	Each of the digits 1-9 must occur exactly once in each row.
 	Each of the digits 1-9 must occur exactly once in each column.
-	Each of the the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
+	Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
 
 
-Empty cells are indicated by the character '.'.
+The '.' character indicates empty cells.
 
-
-A sudoku puzzle...
-
-
-...and its solution numbers marked in red.
-
-Note:
-
-
-	The given board contain only digits 1-9 and the character '.'.
-	You may assume that the given Sudoku puzzle will have a single unique solution.
-	The given board size is always 9x9.
-
+ 
 
 ~~~STATEMENT_START~~~
 38
@@ -416,17 +411,13 @@ Note: Each term of the sequence of integers will be represented as a string.
 
 ~~~STATEMENT_START~~~
 39
-Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target.
+Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations of candidates where the chosen numbers sum to target. You may return the combinations in any order.
 
-The same repeated number may be chosen from candidates unlimited number of times.
+The same number may be chosen from candidates an unlimited number of times. Two combinations are unique if the frequency of at least one of the chosen numbers is different.
 
-Note:
+It is guaranteed that the number of unique combinations that sum up to target is less than 150 combinations for the given input.
 
-
-	All numbers (including target) will be positive integers.
-	The solution set must not contain duplicate combinations.
-
-
+ 
 
 ~~~STATEMENT_START~~~
 41
@@ -471,6 +462,11 @@ Your goal is to reach the last index in the minimum number of jumps.
 ~~~STATEMENT_START~~~
 46
 Given a collection of distinct integers, return all possible permutations.
+
+
+~~~STATEMENT_START~~~
+47
+Given a collection of numbers that might contain duplicates, return all possible unique permutations.
 
 
 ~~~STATEMENT_START~~~
@@ -707,6 +703,7 @@ Write an efficient algorithm that searches for a value in an m x n matrix. This 
 	The first integer of each row is greater than the last integer of the previous row.
 
 
+ 
 
 ~~~STATEMENT_START~~~
 75
@@ -748,6 +745,13 @@ Note: The solution set must not contain duplicate subsets.
 Given a 2D board and a word, find if the word exists in the grid.
 
 The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
+
+
+~~~STATEMENT_START~~~
+80
+Given a sorted array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the new length.
+
+Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
 
 
 ~~~STATEMENT_START~~~
@@ -818,6 +822,9 @@ A message containing letters from A-Z is being encoded to numbers using the foll
 
 Given a non-empty string containing only digits, determine the total number of ways to decode it.
 
+The answer is guaranteed to fit in a 32-bit integer.
+
+ 
 
 ~~~STATEMENT_START~~~
 92
@@ -837,8 +844,6 @@ A valid IP address consists of exactly four integers, each integer is between 0 
 ~~~STATEMENT_START~~~
 94
 Given the root of a binary tree, return the inorder traversal of its nodes' values.
-
-Follow up: Recursive solution is trivial, could you do it iteratively?
 
  
 
@@ -1352,12 +1357,11 @@ What is the minimum candies you must give?
 
 ~~~STATEMENT_START~~~
 136
-Given a non-empty array of integers, every element appears twice except for one. Find that single one.
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
 
-Note:
+Follow up: Could you implement a solution with a linear runtime complexity and without using extra memory?
 
-Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
-
+ 
 
 ~~~STATEMENT_START~~~
 137
@@ -1445,14 +1449,13 @@ You may not modify the values in the list's nodes, only nodes itself may be chan
 
 ~~~STATEMENT_START~~~
 144
-Given a binary tree, return the preorder traversal of its nodes' values.
+Given the root of a binary tree, return the preorder traversal of its nodes' values.
 
+ 
 
 ~~~STATEMENT_START~~~
 145
 Given the root of a binary tree, return the postorder traversal of its nodes' values.
-
-Follow up: Recursive solution is trivial, could you do it iteratively?
 
  
 
@@ -1502,10 +1505,15 @@ Note:
 
 ~~~STATEMENT_START~~~
 151
-Given an input string, reverse the string word by word.
+Given an input string s, reverse the order of the words.
+
+A word is defined as a sequence of non-space characters. The words in s will be separated by at least one space.
+
+Return a string of the words in reverse order concatenated by a single space.
+
+Note that s may contain leading or trailing spaces or multiple spaces between two words. The returned string should only have a single space separating the words. Do not include any extra spaces.
 
  
-
 
 ~~~STATEMENT_START~~~
 152
@@ -1628,6 +1636,23 @@ The array may contain multiple peaks, in that case return the index to any one o
 
 You may imagine that nums[-1] = nums[n] = -∞.
 
+
+~~~STATEMENT_START~~~
+163
+You are given an inclusive range [lower, upper] and a sorted unique integer array nums, where all elements are in the inclusive range.
+
+A number x is considered missing if x is in the range [lower, upper] and x is not in nums.
+
+Return the smallest sorted list of ranges that cover every missing number exactly. That is, no element of nums is in any of the ranges, and each missing number is in one of the ranges.
+
+Each range [a,b] in the list should be output as:
+
+
+	"a->b" if a != b
+	"a" if a == b
+
+
+ 
 
 ~~~STATEMENT_START~~~
 164
@@ -1790,11 +1815,6 @@ Note:
 
 
 ~~~STATEMENT_START~~~
-179
-Given a list of non negative integers, arrange them such that they form the largest number.
-
-
-~~~STATEMENT_START~~~
 186
 Given an input string , reverse the string word by word. 
 
@@ -1917,13 +1937,6 @@ Each word must be constructed from letters of sequentially adjacent cell, where 
 
 
 ~~~STATEMENT_START~~~
-213
-You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.
-
-Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.
-
-
-~~~STATEMENT_START~~~
 214
 Given a string s, you are allowed to convert it to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find by performing this transformation.
 
@@ -2001,8 +2014,9 @@ The expression string may contain open ( and closing parentheses ), the plus + o
 229
 Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
 
-Note: The algorithm should run in linear time and in O(1) space.
+Follow-up: Could you solve the problem in linear time and in O(1) space?
 
+ 
 
 ~~~STATEMENT_START~~~
 230
@@ -2109,13 +2123,11 @@ Given an array of meeting time intervals consisting of start and end times [[s1,
 
 ~~~STATEMENT_START~~~
 256
-There are a row of n houses, each house can be painted with one of the three colors: red, blue or green. The cost of painting each house with a certain color is different. You have to paint all the houses such that no two adjacent houses have the same color.
+There is a row of n houses, where each house can be painted one of three colors: red, blue, or green. The cost of painting each house with a certain color is different. You have to paint all the houses such that no two adjacent houses have the same color.
 
-The cost of painting each house with a certain color is represented by a n x 3 cost matrix. For example, costs[0][0] is the cost of painting house 0 with color red; costs[1][2] is the cost of painting house 1 with color green, and so on... Find the minimum cost to paint all houses.
+The cost of painting each house with a certain color is represented by a n x 3 cost matrix. For example, costs[0][0] is the cost of painting house 0 with the color red; costs[1][2] is the cost of painting house 1 with color green, and so on... Find the minimum cost to paint all houses.
 
-Note:
-All costs are positive integers.
-
+ 
 
 ~~~STATEMENT_START~~~
 257
@@ -2171,8 +2183,11 @@ Given a string s, return all the palindromic permutations (without duplicates) o
 
 ~~~STATEMENT_START~~~
 268
-Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.
+Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
 
+Follow up: Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?
+
+ 
 
 ~~~STATEMENT_START~~~
 269
@@ -2231,6 +2246,19 @@ Note:
 	The string may contain any possible characters out of 256 valid ascii characters. Your algorithm should be generalized enough to work on any possible characters.
 	Do not use class member/global/static variables to store states. Your encode and decode algorithms should be stateless.
 	Do not rely on any library method such as eval or serialize methods. You should implement your own encode/decode algorithm.
+
+
+~~~STATEMENT_START~~~
+272
+Given a non-empty binary search tree and a target value, find k values in the BST that are closest to the target.
+
+Note:
+
+
+	Given target value is a floating point.
+	You may assume k is always valid, that is: k ≤ total nodes.
+	You are guaranteed to have only one unique set of k values in the BST that are closest to the target.
+
 
 
 ~~~STATEMENT_START~~~
@@ -2447,8 +2475,11 @@ If two nodes are in the same row and column, the order should be from left to ri
 
 ~~~STATEMENT_START~~~
 316
-Given a string which contains only lowercase letters, remove duplicate letters so that every letter appears once and only once. You must make sure your result is the smallest in lexicographical order among all possible results.
+Given a string s, remove duplicate letters so that every letter appears once and only once. You must make sure your result is the smallest in lexicographical order among all possible results.
 
+Note: This question is the same as 1081: https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/
+
+ 
 
 ~~~STATEMENT_START~~~
 318
@@ -2466,6 +2497,9 @@ Note: The order of the output does not matter.
 322
 You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
 
+You may assume that you have an infinite number of each kind of coin.
+
+ 
 
 ~~~STATEMENT_START~~~
 326
@@ -2545,6 +2579,13 @@ Note: Your algorithm should run in O(n) time complexity and O(1) space complexit
 Given a list of unique words, return all the pairs of the distinct indices (i, j) in the given list, so that the concatenation of the two words words[i] + words[j] is a palindrome.
 
  
+
+~~~STATEMENT_START~~~
+337
+The thief has found himself a new place for his thievery again. There is only one entrance to this area, called the "root." Besides the root, each house has one and only one parent house. After a tour, the smart thief realized that "all houses in this place forms a binary tree". It will automatically contact the police if two directly-linked houses were broken into on the same night.
+
+Determine the maximum amount of money the thief can rob tonight without alerting the police.
+
 
 ~~~STATEMENT_START~~~
 338
@@ -2709,15 +2750,19 @@ We are playing the Guess Game. The game is as follows:
 
 I pick a number from 1 to n. You have to guess which number I picked.
 
-Every time you guess wrong, I'll tell you whether the number is higher or lower.
+Every time you guess wrong, I will tell you whether the number I picked is higher or lower than your guess.
 
-You call a pre-defined API guess(int num) which returns 3 possible results (-1, 1, or 0):
-
--1 : My number is lower
- 1 : My number is higher
- 0 : Congrats! You got it!
+You call a pre-defined API int guess(int num), which returns 3 possible results:
 
 
+	-1: The number I picked is lower than your guess (i.e. pick ).
+	1: The number I picked is higher than your guess (i.e. pick > num).
+	0: The number I picked is equal to your guess (i.e. pick == num).
+
+
+Return the number that I picked.
+
+ 
 
 ~~~STATEMENT_START~~~
 375
@@ -2801,13 +2846,13 @@ Given a string, find the first non-repeating character in it and return its inde
 
 ~~~STATEMENT_START~~~
 389
-
-Given two strings s and t which consist of only lowercase letters.
+You are given two strings s and t.
 
 String t is generated by random shuffling string s and then add one more letter at a random position.
 
-Find the letter that was added in t.
+Return the letter that was added to t.
 
+ 
 
 ~~~STATEMENT_START~~~
 392
@@ -2864,9 +2909,13 @@ Furthermore, you may assume that the original data does not contain any digits a
 
 ~~~STATEMENT_START~~~
 399
-You are given equations in the format A / B = k, where A and B are variables represented as strings, and k is a real number (floating-point number). Given some queries, return the answers. If the answer does not exist, return -1.0.
+You are given an array of variable pairs equations and an array of real numbers values, where equations[i] = [Ai, Bi] and values[i] represent the equation Ai / Bi = values[i]. Each Ai or Bi is a string that represents a single variable.
 
-The input is always valid. You may assume that evaluating the queries will result in no division by zero and there is no contradiction.
+You are also given some queries, where queries[j] = [Cj, Dj] represents the jth query where you must find the answer for Cj / Dj = ?.
+
+Return the answers to all queries. If a single answer cannot be determined, return -1.0.
+
+Note: The input is always valid. You may assume that evaluating the queries will not result in division by zero and that there is no contradiction.
 
  
 
@@ -3224,13 +3273,13 @@ Could you do it without extra space and in O(n) runtime? You may assume the retu
 
 ~~~STATEMENT_START~~~
 449
-Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.
+Serialization is converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.
 
-Design an algorithm to serialize and deserialize a binary search tree. There is no restriction on how your serialization/deserialization algorithm should work. You just need to ensure that a binary search tree can be serialized to a string and this string can be deserialized to the original tree structure.
+Design an algorithm to serialize and deserialize a binary search tree. There is no restriction on how your serialization/deserialization algorithm should work. You need to ensure that a binary search tree can be serialized to a string, and this string can be deserialized to the original tree structure.
 
 The encoded string should be as compact as possible.
 
-Note: Do not use class member/global/static variables to store states. Your serialize and deserialize algorithms should be stateless.
+ 
 
 ~~~STATEMENT_START~~~
 450
@@ -3254,10 +3303,13 @@ Given a string, sort it in decreasing order based on the frequency of characters
 
 ~~~STATEMENT_START~~~
 452
-There are a number of spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it's horizontal, y-coordinates don't matter and hence the x-coordinates of start and end of the diameter suffice. Start is always smaller than end. There will be at most 104 balloons.
+There are some spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it's horizontal, y-coordinates don't matter, and hence the x-coordinates of start and end of the diameter suffice. The start is always smaller than the end.
 
-An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with xstart and xend bursts by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. An arrow once shot keeps travelling up infinitely. The problem is to find the minimum number of arrows that must be shot to burst all balloons.
+An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with xstart and xend bursts by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. An arrow once shot keeps traveling up infinitely.
 
+Given an array points where points[i] = [xstart, xend], return the minimum number of arrows that must be shot to burst all balloons.
+
+ 
 
 ~~~STATEMENT_START~~~
 453
@@ -3576,11 +3628,11 @@ The maze is represented by a binary 2D array. 1 means the wall and 0 means the e
 
 ~~~STATEMENT_START~~~
 507
-We define the Perfect Number is a positive integer that is equal to the sum of all its positive divisors except itself. 
+A perfect number is a positive integer that is equal to the sum of its positive divisors, excluding the number itself. A divisor of an integer x is an integer that can divide x evenly.
 
-Now, given an integer n, write a function that returns true when it is a perfect number and false when it is not.
+Given an integer n, return true if n is a perfect number, otherwise return false.
 
-
+ 
 
 ~~~STATEMENT_START~~~
 509
@@ -3754,11 +3806,19 @@ More formally, the probability of picking index i is w[i] / sum(w).
 
 ~~~STATEMENT_START~~~
 532
+Given an array of integers nums and an integer k, return the number of unique k-diff pairs in the array.
 
-Given an array of integers and an integer k, you need to find the number of unique k-diff pairs in the array. Here a k-diff pair is defined as an integer pair (i, j), where i and j are both numbers in the array and their absolute difference is k.
+A k-diff pair is an integer pair (nums[i], nums[j]), where the following are true:
 
 
+	0 
+	i != j
+	|nums[i] - nums[j]| == k
 
+
+Notice that |val| denotes the absolute value of val.
+
+ 
 
 ~~~STATEMENT_START~~~
 535
@@ -3780,8 +3840,19 @@ You need to return a string representing their multiplication. Note i2 = -1 acco
 
 ~~~STATEMENT_START~~~
 538
-Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.
+Given the root of a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.
 
+As a reminder, a binary search tree is a tree that satisfies these constraints:
+
+
+	The left subtree of a node contains only nodes with keys less than the node's key.
+	The right subtree of a node contains only nodes with keys greater than the node's key.
+	Both the left and right subtrees must also be binary search trees.
+
+
+Note: This question is the same as 1038: https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
+
+ 
 
 ~~~STATEMENT_START~~~
 540
@@ -4049,10 +4120,6 @@ Given two non-empty binary trees s and t, check whether tree t has exactly the s
 
 
 ~~~STATEMENT_START~~~
-573
-There's a tree, a squirrel, and several nuts. Positions are represented by the cells in a 2D grid. Your goal is to find the minimal distance for the squirrel to collect all the nuts and put them under the tree one by one. The squirrel can only take at most one nut at one time and can move in four directions - up, down, left and right, to the adjacent cell. The distance is represented by the number of moves.
-
-~~~STATEMENT_START~~~
 575
 You have n candies, the ith candy is of type candies[i].
 
@@ -4186,21 +4253,19 @@ A subsequence of array is a sequence that can be derived from the array by delet
 
 ~~~STATEMENT_START~~~
 598
-Given an m * n matrix M initialized with all 0's and several update operations.
-Operations are represented by a 2D array, and each operation is represented by an array with two positive integers a and b, which means M[i][j] should be added by one for all 0  and 0 . 
-You need to count and return the number of maximum integers in the matrix after performing all the operations.
+You are given an m x n matrix M initialized with all 0's and an array of operations ops, where ops[i] = [ai, bi] means M[x][y] should be incremented by one for all 0 i and 0 i.
 
+Count and return the number of maximum integers in the matrix after performing all the operations.
+
+ 
 
 ~~~STATEMENT_START~~~
 599
-
-Suppose Andy and Doris want to choose a restaurant for dinner, and they both have a list of favorite restaurants represented by strings. 
-
+Suppose Andy and Doris want to choose a restaurant for dinner, and they both have a list of favorite restaurants represented by strings.
 
 You need to help them find out their common interest with the least list index sum. If there is a choice tie between answers, output all of them with no order requirement. You could assume there always exists an answer.
 
-
-
+ 
 
 ~~~STATEMENT_START~~~
 600
@@ -4336,10 +4401,9 @@ The adding rule is: given a positive integer depth d, for each NOT null tree nod
 
 ~~~STATEMENT_START~~~
 624
+You are given m arrays, where each array is sorted in ascending order. Now you can pick up two integers from two different arrays (each array picks one) and calculate the distance. We define the distance between two integers a and b to be their absolute difference |a - b|. Your task is to find the maximum distance.
 
-Given m arrays, and each array is sorted in ascending order. Now you can pick up two integers from two different arrays (each array picks one) and calculate the distance. We define the distance between two integers a and b to be their absolute difference |a-b|. Your task is to find the maximum distance.
-
-
+ 
 
 ~~~STATEMENT_START~~~
 625
@@ -4402,8 +4466,9 @@ We define the range [a, b] is smaller than range [c, d] if b - a  or a  if b - a
 
 ~~~STATEMENT_START~~~
 633
-Given a non-negative integer c, your task is to decide whether there're two integers a and b such that a2 + b2 = c.
+Given a non-negative integer c, decide whether there're two integers a and b such that a2 + b2 = c.
 
+ 
 
 ~~~STATEMENT_START~~~
 634
@@ -4726,6 +4791,16 @@ Given an array nums sorted in ascending order, return true if and only if you ca
 
 
 ~~~STATEMENT_START~~~
+660
+Start from integer 1, remove any integer that contains 9 such as 9, 19, 29...
+
+So now, you will have a new integer sequence: 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, ...
+
+Given a positive integer n, you need to return the n-th integer after removing. Note that 1 will be the first integer.
+
+ 
+
+~~~STATEMENT_START~~~
 661
 Given a 2D integer matrix M representing the gray scale of an image, you need to design a smoother to make the gray scale of each cell becomes the average gray scale (rounding down) of all the 8 surrounding cells and itself.  If a cell has less than 8 surrounding cells, then use as many as you can.
 
@@ -4916,28 +4991,20 @@ You may assume the given input string is always valid. For example, "01:34", "12
 
 ~~~STATEMENT_START~~~
 682
+You are keeping score for a baseball game with strange rules. The game consists of several rounds, where the scores of past rounds may affect future rounds' scores.
 
-You're now a baseball game point recorder.
-
-
-
-Given a list of strings, each string can be one of the 4 following types:
-
-Integer (one round's score): Directly represents the number of points you get in this round.
-"+" (one round's score): Represents that the points you get in this round are the sum of the last two valid round's points.
-"D" (one round's score): Represents that the points you get in this round are the doubled data of the last valid round's points.
-"C" (an operation, which isn't a round's score): Represents the last valid round's points you get were invalid and should be removed.
+At the beginning of the game, you start with an empty record. You are given a list of strings ops, where ops[i] is the ith operation you must apply to the record and is one of the following:
 
 
+	An integer x - Record a new score of x.
+	"+" - Record a new score that is the sum of the previous two scores. It is guaranteed there will always be two previous scores.
+	"D" - Record a new score that is double the previous score. It is guaranteed there will always be a previous score.
+	"C" - Invalidate the previous score, removing it from the record. It is guaranteed there will always be a previous score.
 
 
-Each round's operation is permanent and could have an impact on the round before and the round after.
+Return the sum of all the scores on the record.
 
-
-
-You need to return the sum of the points you could get in all the rounds.
-
-
+ 
 
 ~~~STATEMENT_START~~~
 683
@@ -5104,50 +5171,11 @@ Note that an empty tree is represented by NULL, therefore you would see the expe
 
 ~~~STATEMENT_START~~~
 701
-Given the root node of a binary search tree (BST) and a value to be inserted into the tree, insert the value into the BST. Return the root node of the BST after the insertion. It is guaranteed that the new value does not exist in the original BST.
+You are given the root node of a binary search tree (BST) and a value to insert into the tree. Return the root node of the BST after the insertion. It is guaranteed that the new value does not exist in the original BST.
 
-Note that there may exist multiple valid ways for the insertion, as long as the tree remains a BST after insertion. You can return any of them.
-
-For example, 
-
-Given the tree:
-        4
-       / \
-      2   7
-     / \
-    1   3
-And the value to insert: 5
-
-
-You can return this binary search tree:
-
-         4
-       /   \
-      2     7
-     / \   /
-    1   3 5
-
-
-This tree is also valid:
-
-         5
-       /   \
-      2     7
-     / \   
-    1   3
-         \
-          4
-
+Notice that there may exist multiple valid ways for the insertion, as long as the tree remains a BST after insertion. You can return any of them.
 
  
-Constraints:
-
-
-	The number of nodes in the given tree will be between 0 and 10^4.
-	Each node will have a unique integer value from 0 to -10^8, inclusive.
-	-10^8 
-	It's guaranteed that val does not exist in the original BST.
-
 
 ~~~STATEMENT_START~~~
 702
@@ -5600,16 +5628,15 @@ If it is, return the index of the largest element, otherwise return -1.
 
 ~~~STATEMENT_START~~~
 748
+Given a string licensePlate and an array of strings words, find the shortest completing word in words.
 
-Find the minimum length word from a given dictionary words, which has all the letters from the string licensePlate.  Such a word is said to complete the given string licensePlate
+A completing word is a word that contains all the letters in licensePlate. Ignore numbers and spaces in licensePlate, and treat letters as case insensitive. If a letter appears more than once in licensePlate, then it must appear in the word the same number of times or more.
 
-Here, for letters we ignore case.  For example, "P" on the licensePlate still matches "p" on the word.
+For example, if licensePlate = "aBc 12c", then it contains letters 'a', 'b' (ignoring case), and 'c' twice. Possible completing words are "abccdef", "caaacab", and "cbca".
 
-It is guaranteed an answer exists.  If there are multiple answers, return the one that occurs first in the array.
+Return the shortest completing word in words. It is guaranteed an answer exists. If there are multiple shortest completing words, return the first one that occurs in words.
 
-The license plate might have the same letter occurring multiple times.  For example, given a licensePlate of "PP", the word "pair" does not complete the licensePlate, but the word "supper" does.
-
-
+ 
 
 ~~~STATEMENT_START~~~
 749
@@ -5785,15 +5812,6 @@ Every prefix of the binary string has at least as many 1's as 0's.
 Given a special string S, a move consists of choosing two consecutive, non-empty, special substrings of S, and swapping them.  (Two strings are consecutive if the last character of the first string is exactly one index before the first character of the second string.)
 
 At the end of any number of moves, what is the lexicographically largest resulting string possible?
-
-
-
-~~~STATEMENT_START~~~
-762
-
-Given two integers L and R, find the count of numbers in the range [L, R] (inclusive) having a prime number of set bits in their binary representation.
-
-(Recall that the number of set bits an integer has is the number of 1s present when written in binary.  For example, 21 written in binary is 10101 which has 3 set bits.  Also, 1 is not a prime.)
 
 
 
@@ -6016,14 +6034,15 @@ Now given a positive number N, how many numbers X from 1 to N are good?
 
 ~~~STATEMENT_START~~~
 789
-You are playing a simplified Pacman game. You start at the point (0, 0), and your destination is (target[0], target[1]). There are several ghosts on the map, the i-th ghost starts at (ghosts[i][0], ghosts[i][1]).
+You are playing a simplified PAC-MAN game on an infinite 2-D grid. You start at the point [0, 0], and you are given a destination point target = [xtarget, ytarget], which you are trying to get to. There are several ghosts on the map with their starting positions given as an array ghosts, where ghosts[i] = [xi, yi] represents the starting position of the ith ghost. All inputs are integral coordinates.
 
-Each turn, you and all ghosts simultaneously *may* move in one of 4 cardinal directions: north, east, west, or south, going from the previous point to a new point 1 unit of distance away.
+Each turn, you and all the ghosts may independently choose to either move 1 unit in any of the four cardinal directions: north, east, south, or west or stay still. All actions happen simultaneously.
 
-You escape if and only if you can reach the target before any ghost reaches you (for any given moves the ghosts may take.)  If you reach any square (including the target) at the same time as a ghost, it doesn't count as an escape.
+You escape if and only if you can reach the target before any ghost reaches you. If you reach any square (including the target) at the same time as a ghost, it does not count as an escape.
 
-Return True if and only if it is possible to escape.
+Return true if it is possible to escape, otherwise return false.
 
+ 
 
 ~~~STATEMENT_START~~~
 790
@@ -6100,6 +6119,7 @@ Given a directed acyclic graph of N nodes. Find all possible paths from node 0 t
 
 The graph is given as follows:  the nodes are 0, 1, ..., graph.length - 1.  graph[i] is a list of all nodes j for which the edge (i, j) exists.
 
+ 
 
 ~~~STATEMENT_START~~~
 798
@@ -6114,16 +6134,15 @@ Over all possible rotations, return the rotation index K that corresponds to the
 799
 We stack glasses in a pyramid, where the first row has 1 glass, the second row has 2 glasses, and so on until the 100th row.  Each glass holds one cup (250ml) of champagne.
 
-Then, some champagne is poured in the first glass at the top.  When the top most glass is full, any excess liquid poured will fall equally to the glass immediately to the left and right of it.  When those glasses become full, any excess champagne will fall equally to the left and right of those glasses, and so on.  (A glass at the bottom row has it's excess champagne fall on the floor.)
+Then, some champagne is poured in the first glass at the top.  When the topmost glass is full, any excess liquid poured will fall equally to the glass immediately to the left and right of it.  When those glasses become full, any excess champagne will fall equally to the left and right of those glasses, and so on.  (A glass at the bottom row has its excess champagne fall on the floor.)
 
 For example, after one cup of champagne is poured, the top most glass is full.  After two cups of champagne are poured, the two glasses on the second row are half full.  After three cups of champagne are poured, those two cups become full - there are 3 full glasses total now.  After four cups of champagne are poured, the third row has the middle glass half full, and the two outside glasses are a quarter full, as pictured below.
 
 
 
-Now after pouring some non-negative integer cups of champagne, return how full the j-th glass in the i-th row is (both i and j are 0 indexed.)
+Now after pouring some non-negative integer cups of champagne, return how full the jth glass in the ith row is (both i and j are 0-indexed.)
 
  
-
 
 ~~~STATEMENT_START~~~
 800
@@ -6537,6 +6556,7 @@ Two rectangles overlap if the area of their intersection is positive.  To be cle
 
 Given two (axis-aligned) rectangles, return whether they overlap.
 
+ 
 
 ~~~STATEMENT_START~~~
 837
@@ -6963,22 +6983,11 @@ The transpose of a matrix is the matrix flipped over it's main diagonal, switchi
 
 ~~~STATEMENT_START~~~
 868
-Given a positive integer N, find and return the longest distance between two consecutive 1's in the binary representation of N.
+Given a positive integer n, find and return the longest distance between any two adjacent 1's in the binary representation of n. If there are no two adjacent 1's, return 0.
 
-If there aren't two consecutive 1's, return 0.
+Two 1's are adjacent if there are only 0's separating them (possibly no 0's). The distance between two 1's is the absolute difference between their bit positions. For example, the two 1's in "1001" have a distance of 3.
 
  
-
-
-
-
-
-
-
-
-
-
-
 
 ~~~STATEMENT_START~~~
 869
@@ -7147,18 +7156,6 @@ An encoded string S is given.  To find and write the decoded string to a tape, t
 
 
 Now for some encoded string S, and an index K, find and return the K-th letter (1 indexed) in the decoded string.
-
- 
-
-
-
-~~~STATEMENT_START~~~
-881
-The i-th person has weight people[i], and each boat can carry a maximum weight of limit.
-
-Each boat carries at most 2 people at the same time, provided the sum of the weight of those people is at most limit.
-
-Return the minimum number of boats to carry every given person.  (It is guaranteed each person can be carried by a boat.)
 
  
 
@@ -7958,18 +7955,18 @@ Given N, return any beautiful array A.  (It is guaranteed that one exists.)
 
 ~~~STATEMENT_START~~~
 933
-Write a class RecentCounter to count recent requests.
+You have a RecentCounter class which counts the number of recent requests within a certain time frame.
 
-It has only one method: ping(int t), where t represents some time in milliseconds.
+Implement the RecentCounter class:
 
-Return the number of pings that have been made from 3000 milliseconds ago until now.
 
-Any ping with time in [t - 3000, t] will count, including the current ping.
+	RecentCounter() Initializes the counter with zero recent requests.
+	int ping(int t) Adds a new request at time t, where t represents some time in milliseconds, and returns the number of requests that has happened in the past 3000 milliseconds (including the new request). Specifically, return the number of requests that have happened in the inclusive range [t - 3000, t].
 
-It is guaranteed that every call to ping uses a strictly larger value of t than before.
+
+It is guaranteed that every call to ping uses a strictly larger value of t than the previous call.
 
  
-
 
 ~~~STATEMENT_START~~~
 934
@@ -7996,6 +7993,25 @@ You are allowed to place the knight on any numeric cell initially and then you s
 As the answer may be very large, return the answer modulo 109 + 7.
 
  
+
+~~~STATEMENT_START~~~
+936
+You want to form a target string of lowercase letters.
+
+At the beginning, your sequence is target.length '?' marks.  You also have a stamp of lowercase letters.
+
+On each turn, you may place the stamp over the sequence, and replace every letter in the sequence with the corresponding letter from the stamp.  You can make up to 10 * target.length turns.
+
+For example, if the initial sequence is "?????", and your stamp is "abc",  then you may make "abc??", "?abc?", "??abc" in the first turn.  (Note that the stamp must be fully contained in the boundaries of the sequence in order to stamp.)
+
+If the sequence is possible to stamp, then return an array of the index of the left-most letter being stamped at each turn.  If the sequence is not possible to stamp, return an empty array.
+
+For example, if the sequence is "ababc", and the stamp is "abc", then we could return the answer [0, 2], corresponding to the moves "?????" -> "abc??" -> "ababc".
+
+Also, if the sequence is possible to stamp, it is guaranteed it is possible to stamp within 10 * target.length moves.  Any answers specifying more than this number of moves will not be accepted.
+
+ 
+
 
 ~~~STATEMENT_START~~~
 937
@@ -8225,18 +8241,16 @@ Given a sequence of words written in the alien language, and the order of the al
 954
 Given an array of integers A with even length, return true if and only if it is possible to reorder it such that A[2 * i + 1] = 2 * A[2 * i] for every 0 .
 
+
+
+
+
+
+
+
+
+
  
-
-
-
-
-
-
-
-
-
-
-
 
 ~~~STATEMENT_START~~~
 955
@@ -9102,7 +9116,6 @@ Return the smallest level X such that the sum of all the values of nodes at leve
 
  
 
-
 ~~~STATEMENT_START~~~
 1198
 Given a matrix mat where every row is sorted in strictly increasing order, return the smallest common element in all rows.
@@ -9198,6 +9211,16 @@ Design an Iterator class, which has:
 
  
 
+
+~~~STATEMENT_START~~~
+1288
+Given a list of intervals, remove all intervals that are covered by another interval in the list.
+
+Interval [a,b) is covered by interval [c,d) if and only if c  and b .
+
+After doing so, return the number of remaining intervals.
+
+ 
 
 ~~~STATEMENT_START~~~
 1290
@@ -9428,6 +9451,24 @@ Return the power of the string.
 Given a binary string s and an integer k.
 
 Return True if every binary code of length k is a substring of s. Otherwise, return False.
+
+ 
+
+~~~STATEMENT_START~~~
+1463
+Given a rows x cols matrix grid representing a field of cherries. Each cell in grid represents the number of cherries that you can collect.
+
+You have two robots that can collect cherries for you, Robot #1 is located at the top-left corner (0,0) , and Robot #2 is located at the top-right corner (0, cols-1) of the grid.
+
+Return the maximum number of cherries collection using both robots  by following the rules below:
+
+
+	From a cell (i,j), robots can move to cell (i+1, j-1) , (i+1, j) or (i+1, j+1).
+	When any robot is passing through a cell, It picks it up all cherries, and the cell becomes an empty cell (0).
+	When both robots stay on the same cell, only one of them takes the cherries.
+	Both robots cannot move outside of the grid at any moment.
+	Both robots should reach the bottom row in the grid.
+
 
  
 

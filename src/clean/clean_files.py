@@ -53,6 +53,17 @@ def remove_lines_with_too_many_consecutive_spaces(spaces, statement_lines):
     return new_lines
 
 
+def remove_lines_with_too_many_non_alphabet_characters(tolerance, statement_lines):
+    new_lines = []
+    for line in statement_lines:
+        count = 0
+        for i in range(26):
+            count += line.lower().count(chr(i + 97))
+        if count / len(line) > 0.5:       
+            new_lines.append(line)
+    return new_lines
+
+
 def enumerate_functions(statement_lines):
     func_map = {}
     new_lines = []
@@ -116,29 +127,51 @@ def replace_index_calls_with(replacement_word, statement_lines):
     return [re.sub(indexcalls_re, replacement_word, line) for line in statement_lines]
 
 
-statements_file = open('statements.txt', 'r')
-clean_statements_file = open('statements_cleaned1.txt', 'w')
 
-statements_list = compile_statements(statements_file.readlines())
 
-for statement in statements_list:
-    problem_num = statement[0]
-    statement_lines = statement[1]
+def clean_statements(raw_file, clean_file):
+    statements_list = compile_statements(raw_file.readlines())
 
-    statement_lines = remove_indents_and_newlines(statement_lines)
-    statement_lines = remove_blank_lines(statement_lines)
-    statement_lines = remove_lines_shorter_than(25, statement_lines)
-    statement_lines = remove_lines_with_too_many_consecutive_spaces(3, statement_lines)
-    statement_lines = enumerate_functions(statement_lines)
+    for statement in statements_list:
+        problem_num = statement[0]
+        statement_lines = statement[1]
 
-    statement_lines = replace_square_brackets_with('array', statement_lines)
-    statement_lines = replace_curly_braces_with('set', statement_lines)
-    statement_lines = replace_single_quotes_with('value', statement_lines)
-    statement_lines = replace_double_quotes_with('value', statement_lines)
-    statement_lines = replace_index_calls_with('array of index i', statement_lines)
+        statement_lines = remove_indents_and_newlines(statement_lines)
+        statement_lines = remove_blank_lines(statement_lines)
+        statement_lines = remove_lines_shorter_than(25, statement_lines)
+        statement_lines = remove_lines_with_too_many_consecutive_spaces(3, statement_lines)
+        statement_lines = enumerate_functions(statement_lines)
+        statement_lines = remove_lines_with_too_many_non_alphabet_characters(0.4, statement_lines)
 
-    clean_statements_file.write('~~~STATEMENT_START~~~\n')
-    clean_statements_file.write(str(problem_num) + '\n')
+        statement_lines = replace_square_brackets_with('array', statement_lines)
+        statement_lines = replace_curly_braces_with('set', statement_lines)
+        statement_lines = replace_single_quotes_with('value', statement_lines)
+        statement_lines = replace_double_quotes_with('value', statement_lines)
+        statement_lines = replace_index_calls_with('array of index i', statement_lines)
 
-    for line in statement_lines:
-        clean_statements_file.write(line + '\n')
+        clean_file.write(str(problem_num) + '='*10 + '>')
+
+        for line in statement_lines:
+            clean_file.write(line + ' ')
+        clean_file.write('\n')
+
+
+def clean_solutions(raw_file, clean_file):
+    for line in raw_file.readlines():
+        if line.replace('\t', '').replace('\n', '') != '':
+            clean_file.write(line)
+
+
+# statements_file = open('statements_nosol.txt', 'r')
+# clean_statements_file = open('statements_nosol_leaned1.txt', 'w')
+
+statements_nosol_file = open('statements_nosol.txt', 'r')
+clean_statements_nosol_file = open('statements_nosol_cleaned1.txt', 'w')
+
+# solutions_file = open('solutions.txt', 'r')
+# clean_solutions_file = open('solutions_cleaned1.txt', 'w')
+
+# clean_statements(statements_file, clean_statements_file)
+clean_statements(statements_nosol_file, clean_statements_nosol_file)
+
+
