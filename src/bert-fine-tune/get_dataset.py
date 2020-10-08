@@ -40,7 +40,9 @@ def get_dataset():
     problem_list = [Problem(int(statement_num_pair.split('='*10 + '>')[0]), statement_num_pair.split('='*10 + '>')[1].replace('\n', '')) for statement_num_pair in raw_data]
     problem_map = {}
 
+    random.seed(a=12)
     random.shuffle(problem_list)
+
     for problem in problem_list:
         problem_map[problem.number] = problem
 
@@ -61,22 +63,16 @@ def get_dataset():
     train_fraction = 0.75
 
     train_statements = statements_list[:int(num_samples * train_fraction)]
-    train_labels = statements_list[:int(num_samples * train_fraction)]
+    train_labels = label_list[:int(num_samples * train_fraction)]
 
     val_statements = statements_list[int(num_samples * train_fraction):]
-    val_labels = statements_list[int(num_samples * train_fraction):]
+    val_labels = label_list[int(num_samples * train_fraction):]
 
     # print(train_statements[1])
 
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-    train_encodings = tokenizer(train_statements, truncation=True, padding=True)
-    val_encodings = tokenizer(val_statements, truncation=True, padding=True)
-
-    for key, val in train_encodings.items():
-        print(key)
-        print('='*100)
-        print(val)
-        break
+    train_encodings = tokenizer(train_statements, truncation=True, padding='max_length', max_length=512)
+    val_encodings = tokenizer(val_statements, truncation=True, padding='max_length', max_length=512)
 
     return train_encodings, train_labels, val_encodings, val_labels
 
@@ -93,10 +89,4 @@ class LeetcodeDataset(torch.utils.data.Dataset):
 
     def __len__(self):
         return len(self.labels)
-
-train_encodings, train_labels, val_encodings, val_labels = get_dataset()
-train_dataset = LeetcodeDataset(train_encodings, train_labels)
-val_dataset = LeetcodeDataset(val_encodings, val_labels)
-
-print('created final dataset')
     
