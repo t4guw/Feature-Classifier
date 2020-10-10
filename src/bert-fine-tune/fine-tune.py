@@ -1,4 +1,5 @@
 import torch
+import torch.nn.functional as func
 from transformers import BertForSequenceClassification
 from transformers import BertTokenizer
 from torch.utils.data import DataLoader
@@ -33,61 +34,57 @@ model.to(device)
 model.train()
 
 train_loader = DataLoader(train_dataset, batch_size=5, shuffle=True)
+val_loader = DataLoader(val_dataset, batch_size=1, shuffle=True)
 
 optim = AdamW(model.parameters(), lr=5e-5)
 
 
-model.eval()
-# print(model)      
-with torch.no_grad():
-    # Forward pass, calculate logit predictions
-    output = model(torch.LongTensor(train_encodings.input_ids[:3]), \
-    attention_mask=torch.LongTensor(train_encodings.attention_mask[:3]), \
-    labels=torch.LongTensor(train_labels[:3]))
-    print(output)
+
 
 # exit(0)
-
-print('starting training\n')
-for epoch in range(3):
-    print('EPOCH', epoch + 1)
-    batch_num = 1
-    for batch in train_loader:
-        print('  batch', batch_num)
-        optim.zero_grad()
-        input_ids = batch['input_ids'].to(device)
-        print(input_ids.size())
-        print()
-        exit(0)
-        attention_mask = batch['attention_mask'].to(device)
-        labels = batch['labels'].to(device)
-        outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
-        loss = outputs[0]
-        loss.backward()
-        optim.step()
-        batch_num += 1
+if True:
+    print('starting training\n')
+    for epoch in range(3):
+        print('EPOCH', epoch + 1)
+        batch_num = 1
+        for batch in train_loader:
+            print('  batch', batch_num)
+            optim.zero_grad()
+            input_ids = batch['input_ids'].to(device)
+            attention_mask = batch['attention_mask'].to(device)
+            labels = batch['labels'].to(device)
+            outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
+            loss = outputs[0]
+            loss.backward()
+            optim.step()
+            batch_num += 1
 
 print('finished training')
 model.eval()
 print('done')
+print(model)
 
-
-
-# bert_model = BertForSequenceClassification.from_pretrained('bert-base-uncased', return_dict=True)
-# bert_model.train() # put into train mode
-
-
-# optimizer = AdamW(optimizer_grouped_params, lr=1e-5)
-
-# tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-# text_batch = ['this thing is amazing!!', 'this thing is horrible...']
-# encoding  = tokenizer(text_batch, return_tensors='pt', padding=True, truncation=True)
-# input_ids = encoding['input_ids']
-# attention_mask = encoding['attention_mask']
-
-# labels = torch.tensor([0, 1]).unsqueeze(0)
-# outputs = bert_model(input_ids, attention_mask=attention_mask, labels=labels)
-# loss = outputs.loss
-# loss.backward()
-# optimizer.step()
-
+model.eval()
+# print(model) 
+correct = 0
+total = 0
+print('starting validation')
+with torch.no_grad():
+    
+    for batch in val_loader:
+        input_ids = batch['input_ids'].to(device)
+        attention_mask = batch['attention_mask'].to(device)
+        label = batch['labels'].to(device)
+        print(total + 1)
+        print("LABEL:\n", label[0])
+        output = func.softmax(model(input_ids, attention_mask=attention_mask, labels=label)[1], dim=1)
+        print("OUTPUT:\n", output)
+        pred = 0
+        if output[0][1] > 0.5:
+            pred = 1
+        
+        if pred == label[0]:
+            correct += 1
+        total += 1
+        
+print('ACCURACY:', correct / total)
