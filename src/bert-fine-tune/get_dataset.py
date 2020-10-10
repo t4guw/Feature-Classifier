@@ -31,8 +31,11 @@ def process_solutions(filename, problem_map):
 
 
 def get_dataset():
-    statements_path = '/Users/victor/College/Fall-Quarter/Research/Feature-Classifier/src/clean/statements_cleaned1.txt'
-    solutions_path = '/Users/victor/College/Fall-Quarter/Research/Feature-Classifier/src/clean/solutions_cleaned1.txt'
+    # statements_path = '/Users/victor/College/Fall-Quarter/Research/Feature-Classifier/src/clean/statements_cleaned1.txt'
+    # solutions_path = '/Users/victor/College/Fall-Quarter/Research/Feature-Classifier/src/clean/solutions_cleaned1.txt'
+
+    statements_path = 'statements_cleaned1.txt'
+    solutions_path = 'solutions_cleaned1.txt'
 
     statements_file = open(statements_path, 'r')
     raw_data = statements_file.readlines()
