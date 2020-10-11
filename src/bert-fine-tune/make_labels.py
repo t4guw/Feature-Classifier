@@ -9,7 +9,7 @@ from problem import Problem
 # Returns a list of map labels
 # Labels: 0 = no map in solution, >0 = map exists in solution
 # Each index in all_labels labels the corresponding index in all_problems
-def maps(all_problems):
+def maps(all_problems, dims=2):
     all_labels = []
     for problem in all_problems:
         label = 0
@@ -17,6 +17,8 @@ def maps(all_problems):
             for line in solution.split('\n'):
                 if 'map<' in line.lower():
                     label = 1
+        label_vec = [0 for i in range(dims)]
+        label_vec[label] = 1
         all_labels.append(label)
     return all_labels
 
