@@ -36,6 +36,7 @@ model.classifier = torch.nn.Sequential(
     torch.nn.Linear(in_features=2048, out_features=2),
     torch.nn.Softmax(dim=1),
 )
+print(model)
 model.to(device)
 model.train()
 
@@ -68,7 +69,7 @@ if True:
 print('finished training')
 model.eval()
 print('done')
-print(model)
+
 
 model.eval()
 # print(model) 
