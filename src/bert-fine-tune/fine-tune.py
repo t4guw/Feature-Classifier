@@ -34,7 +34,7 @@ model.classifier = torch.nn.Sequential(
     torch.nn.Linear(in_features=768, out_features=2048),
     torch.nn.ReLU(),
     torch.nn.Linear(in_features=2048, out_features=2),
-    torch.nn.Softmax(),
+    torch.nn.Softmax(dim=1),
 )
 model.to(device)
 model.train()
