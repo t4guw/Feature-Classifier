@@ -30,6 +30,12 @@ val_dataset = LeetcodeDataset(val_encodings, val_labels)
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
 model = BertForSequenceClassification.from_pretrained('bert-base-uncased')
+model.classifier = torch.nn.Sequential(
+    torch.nn.Linear(in_features=768, out_features=2048),
+    torch.nn.ReLU(),
+    torch.nn.Linear(in_features=2048, out_features=2),
+    torch.nn.Softmax(),
+)
 model.to(device)
 model.train()
 
@@ -77,7 +83,7 @@ with torch.no_grad():
         label = batch['labels'].to(device)
         print(total + 1)
         print("LABEL:\n", label[0])
-        output = func.softmax(model(input_ids, attention_mask=attention_mask, labels=label)[1], dim=1)
+        output = model(input_ids, attention_mask=attention_mask, labels=label)[1]
         print("OUTPUT:\n", output)
         pred = 0
         if output[0][1] > 0.5:
