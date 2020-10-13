@@ -48,7 +48,7 @@ val_loader = DataLoader(val_dataset, batch_size=1, shuffle=True)
 optim = AdamW(model.parameters(), lr=5e-5)
 
 
-
+loss_list = []
 # exit(0)
 if True:
     print('starting training\n')
@@ -57,7 +57,6 @@ if True:
         batch_num = 0
         loss_sum = 0
         for batch in train_loader:
-            print('  batch', batch_num)
             optim.zero_grad()
 
             input_ids = batch['input_ids'].to(device)
@@ -66,14 +65,15 @@ if True:
 
             outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
             loss = outputs[0]
-            loss_sum += loss
+            loss_sum += loss.item()
 
             loss.backward()
             optim.step()
             batch_num += 1
             
-            print(loss)
-        print(loss_sum / batch_num)
+            print('  batch', batch_num, ' | loss', loss.item())
+        print('EPOCH', epoch, 'AVG loss:', loss_sum / batch_num)
+        loss_list.append(loss_sum / batch_num)
 
 print('LOSS LIST')
 print(loss_list)
