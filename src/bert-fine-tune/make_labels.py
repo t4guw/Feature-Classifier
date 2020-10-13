@@ -17,8 +17,6 @@ def maps(all_problems, dims=2):
             for line in solution.split('\n'):
                 if 'map<' in line.lower():
                     label = 1
-        label_vec = [0 for i in range(dims)]
-        label_vec[label] = 1
         all_labels.append(label)
     return all_labels
 

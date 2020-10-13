@@ -7,7 +7,9 @@ from transformers import AdamW
 from sklearn.model_selection import train_test_split
 from pathlib import Path
 from get_dataset import get_dataset
+import random
 
+random.seed(20)
 
 class LeetcodeDataset(torch.utils.data.Dataset):
     def __init__(self, encodings, labels):
@@ -47,25 +49,35 @@ optim = AdamW(model.parameters(), lr=5e-5)
 
 
 
-
+loss_list = []
 # exit(0)
 if True:
     print('starting training\n')
     for epoch in range(3):
         print('EPOCH', epoch + 1)
-        batch_num = 1
+        batch_num = 0
+        loss_sum = 0
         for batch in train_loader:
             print('  batch', batch_num)
             optim.zero_grad()
+
             input_ids = batch['input_ids'].to(device)
             attention_mask = batch['attention_mask'].to(device)
             labels = batch['labels'].to(device)
+
             outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
             loss = outputs[0]
+            loss_sum += loss
+            
             loss.backward()
             optim.step()
             batch_num += 1
 
+        loss_list.append(loss_sum / batch_num)
+
+print('LOSS LIST')
+print(loss_list)
+print()          
 print('finished training')
 model.eval()
 print('done')
