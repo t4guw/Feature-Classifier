@@ -40,23 +40,56 @@ model.classifier = torch.nn.Sequential(
 )
 print(model)
 model.to(device)
-model.train()
 
 train_loader = DataLoader(train_dataset, batch_size=5, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=1, shuffle=True)
 
 optim = AdamW(model.parameters(), lr=5e-5)
 
+accuracy_list = []
 
-loss_list = []
-# exit(0)
+
+
+
+def validate(acc_list):
+    model.eval()
+    with torch.no_grad():
+        correct = 0
+        total = 0
+        for batch in val_loader:
+            input_ids = batch['input_ids'].to(device)
+            attention_mask = batch['attention_mask'].to(device)
+            label = batch['labels'].to(device)
+            print(total + 1)
+            print("LABEL:\n", label[0])
+            output = model(input_ids, attention_mask=attention_mask, labels=label)[1]
+            print("OUTPUT:\n", output)
+            pred = 0
+            if output[0][1] > 0.5:
+                pred = 1
+            
+            if pred == label[0]:
+                correct += 1
+            total += 1
+            
+    print('ACCURACY:', correct / total)
+    acc_list.append(correct / total)
+    return acc_list
+
+
+
+accuracy_list = validate(accuracy_list)
+epoch_num = 10
+
 if True:
     print('starting training\n')
-    for epoch in range(3):
+    for epoch in range(epoch_num):
+        model.train()
         print('EPOCH', epoch + 1)
         batch_num = 0
         loss_sum = 0
         for batch in train_loader:
+            print('  batch', batch_num)
             optim.zero_grad()
 
             input_ids = batch['input_ids'].to(device)
@@ -65,45 +98,18 @@ if True:
 
             outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
             loss = outputs[0]
-            loss_sum += loss.item()
+            loss_sum += loss
 
             loss.backward()
             optim.step()
             batch_num += 1
             
-            print('  batch', batch_num, ' | loss', loss.item())
-        print('EPOCH', epoch, 'AVG loss:', loss_sum / batch_num)
-        loss_list.append(loss_sum / batch_num)
+        print(loss_sum / batch_num)
+        accuracy_list = validate(accuracy_list)
 
-print('LOSS LIST')
-print(loss_list)
-print()          
-print('finished training')
-model.eval()
-print('done')
-
-
-model.eval()
-# print(model) 
-correct = 0
-total = 0
-print('starting validation')
-with torch.no_grad():
-    
-    for batch in val_loader:
-        input_ids = batch['input_ids'].to(device)
-        attention_mask = batch['attention_mask'].to(device)
-        label = batch['labels'].to(device)
-        print(total + 1)
-        print("LABEL:\n", label[0])
-        output = model(input_ids, attention_mask=attention_mask, labels=label)[1]
-        print("OUTPUT:\n", output)
-        pred = 0
-        if output[0][1] > 0.5:
-            pred = 1
-        
-        if pred == label[0]:
-            correct += 1
-        total += 1
-        
-print('ACCURACY:', correct / total)
+    print('LOSS LIST')
+    print(loss_list)
+    print('ACCURACY LIST')
+    print(accuracy_list)
+    print()          
+    print('finished training')
