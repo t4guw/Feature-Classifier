@@ -71,7 +71,8 @@ if True:
             loss.backward()
             optim.step()
             batch_num += 1
-
+            
+            print(loss)
         print(loss_sum / batch_num)
 
 print('LOSS LIST')
