@@ -49,7 +49,6 @@ optim = AdamW(model.parameters(), lr=5e-5)
 
 
 
-loss_list = []
 # exit(0)
 if True:
     print('starting training\n')
@@ -68,12 +67,12 @@ if True:
             outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
             loss = outputs[0]
             loss_sum += loss
-            
+
             loss.backward()
             optim.step()
             batch_num += 1
 
-        loss_list.append(loss_sum / batch_num)
+        print(loss_sum / batch_num)
 
 print('LOSS LIST')
 print(loss_list)
