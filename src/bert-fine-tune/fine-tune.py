@@ -41,14 +41,19 @@ model.classifier = torch.nn.Sequential(
 print(model)
 model.to(device)
 
-train_loader = DataLoader(train_dataset, batch_size=5, shuffle=True)
+batch_size = 5
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=1, shuffle=True)
 
 optim = AdamW(model.parameters(), lr=5e-5)
 
 accuracy_list = []
 
+log_file = open('experiment_log.txt', 'a')
 
+def update_log(line):
+    log_file.write(line + '\n')
+    log_file.flush()
 
 
 def validate(acc_list):
@@ -77,9 +82,11 @@ def validate(acc_list):
     return acc_list
 
 
-
+loss_list = []
+update_log('START EXPERIMENT\n' + str(model.classifier) + '\nBatch Size: ' + str(batch_size) + '\n')
 accuracy_list = validate(accuracy_list)
 epoch_num = 10
+
 
 if True:
     print('starting training\n')
@@ -105,7 +112,11 @@ if True:
             batch_num += 1
             
         print(loss_sum / batch_num)
+        loss_list.append(loss)
         accuracy_list = validate(accuracy_list)
+        update_log('Epoch: ' + str(epoch) + '\tAccuracy: ' + str(accuracy_list[-1]) + '\tLoss: ' + str(loss_list[-1]))
+
+    update_log('\nEXPERIMENT END\n\n')
 
     print('LOSS LIST')
     print(loss_list)
