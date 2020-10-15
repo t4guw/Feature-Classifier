@@ -105,7 +105,7 @@ if True:
 
             outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
             loss = outputs[0]
-            loss_sum += loss
+            loss_sum += loss.item()
 
             loss.backward()
             optim.step()

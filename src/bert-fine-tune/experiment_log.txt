@@ -15,3 +15,12 @@ Sequential(
 )
 Batch Size: 5
 
+START EXPERIMENT
+Sequential(
+  (0): Linear(in_features=768, out_features=2048, bias=True)
+  (1): ReLU()
+  (2): Linear(in_features=2048, out_features=2, bias=True)
+  (3): Softmax(dim=1)
+)
+Batch Size: 5
+
